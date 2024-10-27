@@ -1,0 +1,8 @@
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/RewardNetworkTests.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/StubAccountRepository.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/StubRewardRepository.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/restaurant/RestaurantTests.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/StubRestaurantRepository.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/reward/JdbcRewardRepositoryTests.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/RewardNetworkImplTests.java
+/Users/apple/Desktop/Spring Academy/core-spring-labfiles/lab/34-spring-data-jpa-solution/src/test/java/rewards/internal/account/AccountTests.java
