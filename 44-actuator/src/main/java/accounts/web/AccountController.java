@@ -2,6 +2,8 @@ package accounts.web;
 
 import accounts.AccountManager;
 import common.money.Percentage;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import rewards.internal.account.Beneficiary;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
 
 /**
  * A controller handling requests for CRUD operations on Accounts and their
@@ -34,6 +37,7 @@ public class AccountController {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	private AccountManager accountManager;
+	private Counter counter;
 
 	// TODO-08: Add a Micrometer Counter
 	// - Inject a MeterRegistry through constructor injection
@@ -41,8 +45,9 @@ public class AccountController {
 	// - Create a Counter from the MeterRegistry: name the counter "account.fetch"
 	//   with a tag of "type"/"fromCode" key/value pair
 	@Autowired
-	public AccountController(AccountManager accountManager) {
+	public AccountController(AccountManager accountManager, MeterRegistry meterRegistry) {
 		this.accountManager = accountManager;
+		this.counter = meterRegistry.counter("account.fetch","type","fromCode");
 	}
 
 	/**
@@ -55,6 +60,7 @@ public class AccountController {
 	 */
 	@GetMapping(value = "/accounts")
 	public List<Account> accountSummary() {
+		logger.debug("Logging message within accountSummary()");
 		return accountManager.getAllAccounts();
 	}
 
@@ -72,7 +78,7 @@ public class AccountController {
 	 */
 	@GetMapping(value = "/accounts/{id}")
 	public Account accountDetails(@PathVariable int id) {
-
+		this.counter.increment();
 		return retrieveAccount(id);
 	}
 

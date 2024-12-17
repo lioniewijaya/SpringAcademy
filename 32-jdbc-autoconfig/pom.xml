@@ -25,19 +25,28 @@
 
         <!-- TO-DO-02 : Refactor from discrete Spring Framework
              dependencies to JDBC and Test Spring Boot Starters -->
-
-        <!-- Needed for the Spring JdbcTemplate -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- Spring Integration testing support -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Needed for the Spring JdbcTemplate -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-jdbc</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- Spring Integration testing support -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-test</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <!-- Database - DO NOT MODIFY -->
         <dependency>
@@ -60,8 +69,10 @@
 
             <!-- Ensure resources are handled correctly -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
             </plugin>
         </plugins>
     </build>
